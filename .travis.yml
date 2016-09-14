@@ -1,9 +1,10 @@
-sudo: false
 addons:
   apt:
     packages:
+      - rake
       - git
       - bison
+      - gperf
 language: c
 compiler:
   - gcc
@@ -12,5 +13,4 @@ env:
   - MRUBY_VERSION=1.2.0
   - MRUBY_VERSION=master
 script:
-  - rake clean
   - rake test
