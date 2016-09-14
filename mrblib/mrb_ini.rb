@@ -7,9 +7,9 @@ module Ini
     Ini.parse(File.read(path))
   end
 
-  # def self.dump(hash)
-  #   Dumper.new(hash).ini
-  # end
+  def self.dump(hash)
+    Dumper.new(hash).ini
+  end
 
   class Parser
     attr_reader :hash
@@ -55,13 +55,10 @@ module Ini
     end
   end
 
-  # wip
-  # class Dumper
-  #   attr_reader :ini
-  #   def initialize(hash)
-  #     @ini = @hash.map do |h|
-  #       "[#{h.first}]\n" + h.last.map {|k,v| "#{k} = #{v}"}.join("\n") }
-  #     end.join "\n"
-  #   end
-  # end
+  class Dumper
+    attr_reader :ini
+    def initialize(hash)
+      @ini = hash.map { |h| "[#{h.first}]\n" + h.last.map {|k,v| "#{k}=#{v}"}.join("\n") }.join("\n")
+    end
+  end
 end

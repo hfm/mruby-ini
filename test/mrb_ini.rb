@@ -40,3 +40,18 @@ assert("Ini.#load_file") do
   puts path
   assert_equal expect, Ini.load_file(path)
 end
+
+assert("Ini.#dump") do
+  expect = "[section1]\nkey=value\nint=1\nfloat=1.5\nbool=true"
+
+  content = {
+    "section1" => {
+      "key" => "value",
+      "int" => 1,
+      "float" => 1.5,
+      "bool" => true
+    },
+  }
+
+  assert_equal expect, Ini.dump(content)
+end
