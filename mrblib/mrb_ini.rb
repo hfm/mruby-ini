@@ -19,7 +19,9 @@ module Ini
     end
 
     def parse(content)
+      @hash.clear
       section = nil
+
       content.each_line do |l|
         l.strip!
         case l
