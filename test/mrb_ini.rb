@@ -46,7 +46,12 @@ assert("Ini.#load_file") do
     },
     "section3" => {
       "true" => false
-    }
+    },
+    "section 4 (empty)" => {},
+    "section5" => {
+      "with space" => "a & 1",
+      "nil" => nil
+    },
   }
 
   path = File.join(File.dirname(File.expand_path('.', __FILE__)), 'sample.ini')

@@ -51,6 +51,8 @@ module Ini
         true
       when /\Afalse\z/i
         false
+      when /\A\s*\z/
+        nil
       else
         Integer(data) rescue Float(data) rescue data
       end
