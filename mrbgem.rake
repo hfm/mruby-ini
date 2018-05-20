@@ -1,3 +1,5 @@
+require "#{MRUBY_ROOT}/lib/mruby/source"
+
 MRuby::Gem::Specification.new('mruby-ini') do |spec|
   spec.license = 'MIT'
   spec.authors = 'OKUMURA Takahiro'
