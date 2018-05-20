@@ -5,7 +5,10 @@ MRuby::Gem::Specification.new('mruby-ini') do |spec|
 
   spec.add_dependency 'mruby-string-ext'
   spec.add_dependency 'mruby-kernel-ext'
-
-  spec.add_dependency 'mruby-io'
   spec.add_dependency 'mruby-onig-regexp'
+  if MRuby::Source::MRUBY_VERSION >= '1.4.0'
+    spec.add_dependency 'mruby-io', core: 'mruby-io'
+  else
+    spec.add_dependency 'mruby-io'
+  end
 end
