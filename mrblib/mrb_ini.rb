@@ -28,11 +28,11 @@ module Ini
         when /\A[;#]/
           # comment out
         when /\A\[([^\]]+)\]\s*(?:[;#])?/
-          section = $1.strip
+          section = $1.strip.chomp
           @hash[section] ||= {}
         when /\A(.*?)=(.*)\z/
-          key = $1.strip
-          val = type_cast $2.strip
+          key = $1.strip.chomp
+          val = type_cast $2.strip.chomp
 
           if section.nil?
             @hash['DEFAULT'] ||= {}

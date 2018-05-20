@@ -13,7 +13,7 @@ end
 ```
 ## example
 ```ruby
-p Ini.file_load('path_to.ini')
+p Ini.load_file('path_to.ini')
 #=> {"DEFAULT"=>{"global"=>"variable"}, "section1"=>{"key"=>"value", "int"=>1, "float"=>1.5, "bool"=>true}, "section2"=>{"hello"=>"world"}, "section3"=>{"true"=>false}}
 p = Ini.parse "[section1]\nkey = value\nbool = true"
 #=> {"section1"=>{"key"=>"value", "bool"=>true}}
